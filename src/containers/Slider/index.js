@@ -46,7 +46,8 @@ const Slider = () => {
                   key={`${_.title}_${_.date}_radio`} /* enlever event pour mettre _ */
                   type="radio"
                   name="radio-button"
-                  defaultChecked={idx === radioIdx} /* remplacer checked par defaultChecked */
+                  checked={index === radioIdx} /* remplace idx par index pour que les points suivent */
+                  readOnly /* ajout de readOnly pour enlever warning */
                 />
               ))}
             </div>
