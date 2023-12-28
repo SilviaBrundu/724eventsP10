@@ -12,14 +12,14 @@ const Slider = () => {
   );
   const nextCard = () => {
     setTimeout(
-      () => setIndex(index < byDateDesc?.length ? index + 1 : 0),
+      () => setIndex(index < `${byDateDesc?.length}` -1 ? index + 1 : 0),
+      // retrait de 1 pour enlever l'image blanche
       5000
     );
   };
   useEffect(() => {
     nextCard();
   });
-  console.log(byDateDesc)
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
