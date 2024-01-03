@@ -43,10 +43,10 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((bulletPoint, radioIdx) => (
                 <input
-                  key={`${bulletPoint.title}_${bulletPoint.date}_radio`} /* enlever event pour mettre _ */
+                  key={`${bulletPoint.title}_${bulletPoint.date}_radio`} /* enlever event pour mettre bulletPoint */
                   type="radio"
                   name="radio-button"
-                  checked={index === radioIdx} /* remplace idx par index pour que les points suivent */
+                  checked={index === radioIdx} /* remplacement idx par index. Nous devons comparer avec le bon index pour mettre à jour correctement et pour que les points suivent */
                   readOnly /* ajout de readOnly pour enlever warning */
                 />
               ))}
