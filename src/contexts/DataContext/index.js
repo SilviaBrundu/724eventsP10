@@ -32,9 +32,9 @@ export const DataProvider = ({ children }) => {
     getData();
   });
   useEffect(() => {
-    if (data)setLast(data.events[0])},
+    if (data)setLast(data.events.sort((evtA, evtB) => (new Date(evtA.date) < new Date(evtB.date) ? -1 : 1))[0])},
     [data]
-    // permet d'afficher le dernier event dans le footer 
+    // permet d'afficher le dernier event dans le footer et de ranger dans l'ordre croissant
   )
   
   return (
