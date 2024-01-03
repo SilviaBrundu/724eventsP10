@@ -14,9 +14,9 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const filteredEvents = (
-    (!type
+    (!type // si le type n'est pas défini, nous renvoyons tous les events.
       ? data?.events
-      // en ajoutant .filter((event) => event.type === type je permet de filtrer les catégories 
+      // si le type est défini, nous devons ajouter un filtre pour afficher les événements en fonction de la sélection dans le composant Select
       : data?.events.filter((event) => event.type === type))  || []
       ).filter((_, index) => {
     if (
@@ -44,7 +44,7 @@ const EventList = () => {
           <h3 className="SelectTitle">Catégories</h3>
           <Select
             selection={Array.from(typeList)}
-            onChange={(value) => (value ? changeType(value) : changeType(null))}
+            onChange={(value) => changeType(value)}
           />
           <div id="events" className="ListContainer">
             {filteredEvents.map((event) => (
