@@ -27,15 +27,14 @@ export const DataProvider = ({ children }) => {
       setError(err);
     }
   }, []);
+
   useEffect(() => {
-    if (data) return;
+    if (data && data.events) {
+      setLast(data.events.sort((evtA, evtB) => // permet d'afficher le dernier event dans le footer et de ranger dans l'ordre croissant
+      new Date(evtA.date) < new Date(evtB.date) ? -1 : 1)[0])
+      return;}
     getData();
   });
-  useEffect(() => {
-    if (data)setLast(data.events.sort((evtA, evtB) => (new Date(evtA.date) < new Date(evtB.date) ? -1 : 1))[0])},
-    [data]
-    // permet d'afficher le dernier event dans le footer et de ranger dans l'ordre croissant
-  )
   
   return (
     <DataContext.Provider
