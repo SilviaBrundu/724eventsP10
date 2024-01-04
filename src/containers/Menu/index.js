@@ -8,14 +8,17 @@ const Menu = () => (
   <nav>
     <Logo />
     <ul>
+    {/* ajout de window.document.location.hash qui renvoie une chaîne qui contient un # ainsi que l'identifiant du fragment de l'URL . 
+    L'identifiant de fragment de l'URL commence par un # suivi d'un identifiant qui identifie de manière unique 
+    une section. J'ai également rajouté les id dans le fichier home du dossier page */}
       <li>
-        <a href="#nos-services">Nos services</a>
+        <a href="#nos-services" onClick={() => (window.document.location.hash = "#services")}>Nos services</a>
       </li>
       <li>
-        <a href="#nos-realisations">Nos réalisations</a>
+        <a href="#nos-realisations" onClick={() => (window.document.location.hash = "#realisations")}>Nos réalisations</a>
       </li>
       <li>
-        <a href="#notre-equipe">Notre équipe</a>
+        <a href="#notre-equipe" onClick={() => (window.document.location.hash = "#equipe")}>Notre équipe</a>
       </li>
     </ul>
     <Button title="contact" onClick={() => (window.document.location.hash = "#contact")}>
