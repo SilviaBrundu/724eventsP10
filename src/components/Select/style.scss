@@ -55,6 +55,7 @@
     height: 32px;
     margin-top: 16px;
     margin-right: 8px;
+    cursor: pointer;
     &.close {
       transform: rotate(180deg);
     }
@@ -64,7 +65,7 @@
       display: flex;
     }
     &--hide {
-      color: white;
+      display: none;
     }
   }
 }
