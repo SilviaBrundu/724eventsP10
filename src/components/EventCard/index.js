@@ -38,7 +38,7 @@ EventCard.propTypes = {
 };
 
 EventCard.defaultProps = {
-  imageSrc: "", // J'ai enlevé isrequired et mis en defaultProps avec une valeur par default vide pour imagesrc et title
+  imageSrc: "", // J'ai enlevé isrequired de title et imageSrc et mis en defaultProps avec une valeur par default vide pour imagesrc et title
   imageAlt: "image",
   title: "",
   small: false,
