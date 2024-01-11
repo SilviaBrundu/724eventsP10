@@ -16,7 +16,7 @@ const Form = ({ onSuccess, onError }) => {
       try {
         await mockContactApi();
         setSending(false);
-        onSuccess() // Correction du bug d'envoi du formulaire grace a onSuccess() nous l'avons rajouté
+        onSuccess() // Correction du bug d'envoi du formulaire grace a onSuccess() qui n'était pas appelé mais bien présent dans home nous l'avons rajouté
       } catch (err) {
         setSending(false);
         onError(err);
